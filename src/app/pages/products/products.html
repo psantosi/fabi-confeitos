@@ -1,0 +1,26 @@
+<div class="container py-5">
+    <ul class="nav nav-tabs mb-5">
+        @for (tab of tabs; track tab.id) {
+            <li class="nav-item">
+                <a class="nav-link" [class.active]="tabRouteSelected === tab.route" (click)="tabSelect(tab.route)">{{ tab.name }}</a>
+            </li>
+        }
+    </ul>
+
+    @if (productsSelected.length) {
+        <div class="row">
+            @for (product of productsSelected; track product.id) {
+                <app-product 
+                    [title]="product.title"
+                    [description]="product.description"
+                    [price]="product.price"
+                    [imageUrl]="product.imageUrl"
+                    class="col-lg-6"
+                >
+                </app-product>
+            }
+        </div>
+    } @else {
+        <p class="text-center">Em breve...</p>
+    }
+</div>

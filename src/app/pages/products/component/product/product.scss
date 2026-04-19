@@ -1,0 +1,30 @@
+.card-text {
+    font-size: 0.9rem;
+}
+
+.card-title {
+    font-size: 1.5rem;
+}
+
+.card {
+    background-color: #fff;
+    color: #60361f;
+    border-color: #f8bcc7;
+    height: 200px;
+    @media (max-width: 767px) {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 767px) {
+    .box-img {
+        flex-direction: column;
+    }
+}
+
+.img-product {
+    max-width: 200px;
+    width: 100%;
+}

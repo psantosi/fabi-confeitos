@@ -1,0 +1,47 @@
+.doces {
+  max-width: 600px;
+  margin-top: -20px;
+  width: 100%;
+}
+
+.missao {
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+  width: 100%;
+  p {
+    font-size: 1.8em;
+
+    @media (max-width: 576px) {
+      font-size: 1.5em;
+    }
+  }
+}
+
+.card {
+  border: none;
+  background-color: transparent;
+  .card-body {
+    padding: 0;
+    border: 8px solid #fff;
+    box-shadow: 0px 8px 8px;
+
+    img {
+      max-width: 100;
+    }
+  }
+
+  .btn {
+    margin: -15px auto;
+    width: 100%;
+    max-width: 200px;
+  }
+
+  @media (max-width: 576px) {
+    padding: 0 40px 0;
+    margin-bottom:  40px;
+  }
+}
+
+
+

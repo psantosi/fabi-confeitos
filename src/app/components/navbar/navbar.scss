@@ -1,0 +1,33 @@
+.bg-banner {
+  background-image: url('/banner.png');
+}
+
+.navbar-toggler, .navbar-toggler-icon{
+  color: #fcf6df;
+  border-color: #fcf6df;
+}
+
+.navbar-toggler {
+  margin: 0.5em 0;
+}
+
+.nav-link {
+  font-family: "Delicious Handrawn", cursive;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: larger;
+  color: #fcf6df;
+  &.active {
+    font-weight: 700;
+  }
+}
+
+.navbar {
+  background-color: #60361f;
+  > div {
+    border-color: #fcf6df;
+    border-style: dotted;
+    border-width: 1px 0;
+  }
+}

@@ -1,0 +1,30 @@
+
+<div class="bg-banner pt-4 pb-2">
+    <img src="logo.jpg" class="mx-auto d-block rounded-circle shadow-sm" alt="Log">
+</div>
+
+<nav class="navbar navbar-expand-md" data-bs-theme="dark">
+    <div class="container-fluid text-center">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse d-md-flex flex-md-column" id="navbarNav">
+                  
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link px-4" [class.active]="isRouteActive('/home')" routerLink="/home" >Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-4" [class.active]="isRouteActive('/entreprise')" routerLink="/entreprise">Empresa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-4" [class.active]="isRouteActive('/products')" routerLink="/products/cake">Produtos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-4" [class.active]="isRouteActive('/order')" routerLink="/order">Pedido</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

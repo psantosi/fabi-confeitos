@@ -1,0 +1,46 @@
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap-icons/font/bootstrap-icons';
+
+
+body {
+    background-color: #fcf6df;
+    color: #60361f;
+}
+
+.btn-primary {
+    background-color: #a1c3a8;
+    border-color: #a1c3a8;
+    color: #60361f;
+    &:hover {
+        background-color: #8ed1a0 !important;
+        border-color: #8ed1a0 !important;
+        color: #60361f !important;
+    }
+    &:disabled {
+        background-color: #e0e0e0;
+        border-color: #a1c3a8;
+        color: #60361f;
+    }
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border-color: #a1c3a8;
+    color: #60361f;
+    &:hover {
+        background-color: #fff !important;
+        border-color: #8ed1a0 !important;
+        color: #60361f !important;
+    }
+}
+
+.title-imperial {
+    font-family: "Imperial Script", cursive;
+    font-weight: 700;
+}
+
+.text-primary {
+    color: #60361f !important;
+}

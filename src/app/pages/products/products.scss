@@ -1,0 +1,21 @@
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link{
+    border-color: #60361f;
+    background-color: #60361f;
+    border-bottom: 0;
+    font-weight: 700;
+    color: #fcf6df;
+}
+
+.nav-link {
+    color: #60361f;
+    &:hover {
+        border-bottom: #60361f;
+        font-weight: 700;
+    }
+}
+
+.nav-tabs {
+    border-color: #60361f;
+    font-family: "Delicious Handrawn", cursive;
+    font-size: 1.2rem;
+}
