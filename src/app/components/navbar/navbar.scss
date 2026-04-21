@@ -31,3 +31,11 @@
     border-width: 1px 0;
   }
 }
+
+.current-page {
+  color: #fcf6df;
+  font-family: "Delicious Handrawn", cursive;
+  @media (min-width: 768px) { 
+    display: none;
+  }
+}

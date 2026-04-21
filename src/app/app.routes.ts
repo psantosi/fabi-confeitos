@@ -8,18 +8,22 @@ export const routes: Routes = [
     {
         path: 'home',
         component: Home,
+        title: 'Inicio'
     },
     {
         path: 'entreprise',
         component: Enterprise,
+        title: 'Empresa'
     },
     {
         path: 'products/:tab',
         component: Products,
+        title: 'Produtos'
     },
     {
         path: 'order',
         component: Order,
+        title: 'Pedido'
     },
     {
         path: '',

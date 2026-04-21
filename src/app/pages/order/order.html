@@ -9,35 +9,39 @@
             <label for="email" class="form-label">E-mail</label>
             <input type="email" class="form-control" id="email" formControlName="email">
         </div>
-            <div class="mb-3 col-12 col-md-6">
-                <label for="typeProduct" class="form-label">Tipo de Produto</label>
-                <select class="form-select" id="typeProduct" formControlName="productTypeId" (change)="selectProducts()">
-                    <option value="">Selecione tipo do produto</option>
-                    @for (type of productsTypes; track type.id) {
-                        <option value={{type.id}}>{{type.name}}</option>
-                    }
-                </select>
-            </div>
-            <div class="mb-3 col-12 col-md-6">
-                <label for="typeProduct" class="form-label">Produto</label>
-                <select class="form-select" id="typeProduct" formControlName="productId">
-                    <option value="">Selecione o produto</option>
-                    @for (product of productsSelected; track product.id) {
-                        <option value={{product.id}}>{{product.title}}</option>
-                    }
-                </select>
-            </div>
-            <div class="mb-3 col-12">
-                <label for="exampleFormControlTextarea1" class="form-label">Observação</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="observation"></textarea>
-            </div>
-            <div class="mb-3 col-6">
-                <label for="quantity" class="form-label">Quantidade</label>
-                <input type="number" class="form-control" id="quantity" min="1" formControlName="quantity">
-            </div>
-            <div class="pt-3">
-                <button type="button" class="btn btn-primary me-2" [disabled]="!orderForm.valid" (click)="submitOrder()">Enviar</button>
-                <button type="button" class="btn btn-secondary" (click)="clearForm()">Limpar</button>
-            </div>
+        <div class="mb-3 col-12">
+            <label for="phone" class="form-label">Celular</label>
+            <input type="text" class="form-control" id="phone" formControlName="phone">
+        </div>
+        <div class="mb-3 col-12 col-md-6">
+            <label for="typeProduct" class="form-label">Tipo de Produto</label>
+            <select class="form-select" id="typeProduct" formControlName="productTypeId" (change)="selectProducts()">
+                <option value="">Selecione tipo do produto</option>
+                @for (type of productsTypes; track type.id) {
+                    <option value={{type.id}}>{{type.name}}</option>
+                }
+            </select>
+        </div>
+        <div class="mb-3 col-12 col-md-6">
+            <label for="typeProduct" class="form-label">Produto</label>
+            <select class="form-select" id="typeProduct" formControlName="productId">
+                <option value="">Selecione o produto</option>
+                @for (product of productsSelected; track product.id) {
+                    <option value={{product.id}}>{{product.title}}</option>
+                }
+            </select>
+        </div>
+        <div class="mb-3 col-12">
+            <label for="exampleFormControlTextarea1" class="form-label">Observação</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="observation"></textarea>
+        </div>
+        <div class="mb-3 col-6">
+            <label for="quantity" class="form-label">Quantidade</label>
+            <input type="number" class="form-control" id="quantity" min="1" formControlName="quantity">
+        </div>
+        <div class="pt-3">
+            <button type="button" class="btn btn-primary me-2" [disabled]="!orderForm.valid" (click)="submitOrder()">Enviar</button>
+            <button type="button" class="btn btn-secondary" (click)="clearForm()">Limpar</button>
+        </div>
     </form>
 </div>

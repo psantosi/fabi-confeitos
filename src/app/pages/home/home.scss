@@ -43,5 +43,21 @@
   }
 }
 
+.carousel {
+  border: 8px solid #60361f;
+  box-shadow: 0px 0px 8px;
+  border-radius: 12px;
+  background: #60361f2e;
+}
+
+.carousel-control-prev, .carousel-control-next {
+  color: #60361f;
+  font-size: 2rem;
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: #60361f;
+}
+
 
 

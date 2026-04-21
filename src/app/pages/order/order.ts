@@ -18,6 +18,7 @@ export class Order {
   orderForm = new FormGroup({
     name: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
+    phone: new FormControl('', [Validators.required]),
     productTypeId: new FormControl('', [Validators.required]),
     productId: new FormControl({value: '',  disabled: true }),
     quantity: new FormControl(1, [Validators.required, Validators.min(1)]),
