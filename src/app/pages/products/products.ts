@@ -1,8 +1,8 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IProduct } from './interfaces/Product';
-import { IProductList } from './interfaces/ProductList';
+import { IProduct } from '../../shared/interfaces/Product';
+import { IProductList } from '../../shared/interfaces/ProductList';
 import { Product } from './component/product/product';
 import { ProductList } from '../../shared/mocks/product-list.mock';
 

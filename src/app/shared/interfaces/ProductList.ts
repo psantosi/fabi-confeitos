@@ -7,7 +7,3 @@ export interface IProductList {
     products: IProduct[];
 }
 
-export interface IProductType {
-    id: number;
-    name: string;
-}

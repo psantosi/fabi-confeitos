@@ -1,5 +1,6 @@
 <div class="container py-5">
     <h1 class="title-imperial pb-4">Faça seu pedido</h1>
+
     <form class="row" [formGroup]="orderForm">
         <div class="mb-3 col-12">
             <label for="name" class="form-label">Nome</label>
@@ -13,35 +14,72 @@
             <label for="phone" class="form-label">Celular</label>
             <input type="text" class="form-control" id="phone" formControlName="phone">
         </div>
-        <div class="mb-3 col-12 col-md-6">
+        <div class="mb-5 col-12">
+            <label for="observation" class="form-label">Observação</label>
+            <textarea class="form-control" id="observation" rows="3" formControlName="observation"></textarea>
+        </div>
+        
+    </form>
+
+    <h4 class="title-imperial pb-4">Adicione o produtos ao seu pedido</h4>
+
+    <form class="row" [formGroup]="addProductForm">
+        <div class="mb-3 col-12 col-md-4">
             <label for="typeProduct" class="form-label">Tipo de Produto</label>
             <select class="form-select" id="typeProduct" formControlName="productTypeId" (change)="selectProducts()">
-                <option value="">Selecione tipo do produto</option>
+                <option value="null">Selecione tipo do produto</option>
                 @for (type of productsTypes; track type.id) {
-                    <option value={{type.id}}>{{type.name}}</option>
+                    <option [value]="type.id">{{type.name}}</option>
                 }
             </select>
         </div>
-        <div class="mb-3 col-12 col-md-6">
-            <label for="typeProduct" class="form-label">Produto</label>
-            <select class="form-select" id="typeProduct" formControlName="productId">
-                <option value="">Selecione o produto</option>
+        <div class="mb-3 col-12 col-md-4">
+            <label for="product" class="form-label">Produto</label>
+            <select class="form-select" id="product" formControlName="productId">
+                <option value="null">Selecione o produto</option>
                 @for (product of productsSelected; track product.id) {
-                    <option value={{product.id}}>{{product.title}}</option>
+                    <option [value]="product.id">{{product.title}}</option>
                 }
             </select>
         </div>
-        <div class="mb-3 col-12">
-            <label for="exampleFormControlTextarea1" class="form-label">Observação</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="observation"></textarea>
-        </div>
-        <div class="mb-3 col-6">
+        <div class="mb-3 col-6 col-md-3">
             <label for="quantity" class="form-label">Quantidade</label>
             <input type="number" class="form-control" id="quantity" min="1" formControlName="quantity">
         </div>
-        <div class="pt-3">
-            <button type="button" class="btn btn-primary me-2" [disabled]="!orderForm.valid" (click)="submitOrder()">Enviar</button>
-            <button type="button" class="btn btn-secondary" (click)="clearForm()">Limpar</button>
+        <div class="btn-plus col-1 d-flex align-items-center">
+            <button type="button" class="btn btn-secondary" (click)="addProduct()" [disabled]="!addProductForm.valid">
+                <i class="bi bi-cart-plus"></i>
+            </button>
         </div>
     </form>
+
+    @if (productsAdded.length > 0) {
+        <table class="table table-striped mt-4">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Produto</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Quantidade</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (item of productsAdded; track item.id) {
+                    <tr>
+                        <th scope="row">{{item.id}}</th>
+                        <td>{{item.product}}</td>
+                        <td>{{item.type}}</td>
+                        <td>{{item.quantity}}</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    } @else {
+        <p class="text-center mt-4">Nenhum produto adicionado</p>
+    }
+
+    <div class="pt-3">
+        <button type="button" class="btn btn-primary me-2" [disabled]="!orderForm.valid || this.productsAdded.length === 0" (click)="submitOrder()">Enviar</button>
+        <button type="button" class="btn btn-secondary" (click)="clearOrderForm()">Limpar</button>
+    </div>
 </div>
