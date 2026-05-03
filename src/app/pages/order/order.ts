@@ -6,18 +6,23 @@ import { IProduct } from '../../shared/interfaces/Product';
 import { IProductType } from '../../shared/interfaces/ProductType';
 import { IAddProductForm } from './interfaces/AddProductForm';
 import { OrderService } from './services/order.service';
-import { CurrencyPipe, formatCurrency } from '@angular/common';
+import { CurrencyPipe } from '@angular/common';
 import { IProductsAdded } from './interfaces/ProductAdded';
 import { NgxMaskDirective } from 'ngx-mask';
+import { ToastrService } from 'ngx-toastr';
+import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
+import { timeout } from 'rxjs';
 
 @Component({
   selector: 'app-order',
-  imports: [ReactiveFormsModule, CurrencyPipe, NgxMaskDirective],
+  imports: [ReactiveFormsModule, CurrencyPipe, NgxMaskDirective, NgxSpinnerModule],
   templateUrl: './order.html',
   styleUrl: './order.scss',
 })
 export class Order {
-  orderService: OrderService = inject(OrderService);
+  private orderService: OrderService = inject(OrderService);
+  private toastr = inject(ToastrService);
+  private spinner: NgxSpinnerService = inject(NgxSpinnerService);
 
   productsList: IProductList[] = ProductList
   productsTypes: IProductType[] = this.productsList.map(p => ({ id: p.id, name: p.name }));
@@ -109,6 +114,7 @@ export class Order {
   }
 
   submitOrder() {
+    this.spinner.show();
     const order: string = this.buildOrder();
 
     const orderDTO = {
@@ -120,9 +126,17 @@ export class Order {
       order,
     }
 
-    this.orderService.sendOrder(orderDTO).subscribe(() => {
-      this.clearOrderForm();
-    });
+    this.orderService.sendOrder(orderDTO).subscribe(
+      () => {
+        this.toastr.success('Seu pedido foi enviado, logo entraremos em contato!', 'Tudo certo :)');
+        this.clearOrderForm();
+        this.spinner.hide();
+      },
+      () => {
+        this.toastr.error('Não foi possivel enviar seu pedido, tente mais tarde!', 'Sinto muito :(');
+        this.spinner.hide();
+      }
+    );
   }
 
   buildOrder(): string {
