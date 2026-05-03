@@ -1,15 +1,19 @@
 <div class="container">
-    <div id="carousel" class="carousel slide my-5" data-bs-ride="true">
+    <div id="carousel" class="carousel slide my-4" data-bs-ride="true">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active"></button>
             <button type="button" data-bs-target="#carousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#carousel" data-bs-slide-to="2"></button>
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="doces.png" class="rounded mx-auto d-block img-fluid doces" alt="...">
+                <img src="doces.png" class="rounded mx-auto d-block img-fluid doces">
             </div>
             <div class="carousel-item">
-                <img src="ovos-pascoa.png" class="rounded mx-auto d-block img-fluid doces" alt="...">
+                <img src="ovos-pascoa.png" class="rounded mx-auto d-block img-fluid doces">
+            </div>
+            <div class="carousel-item">
+                <img src="festa-aniversario.png" class="rounded mx-auto d-block img-fluid doces">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
@@ -28,6 +32,16 @@
             preparados com ingredientes de qualidade, cuidado em cada detalhe e muito amor.
             transformando momentos simples em experiencias expeciais e inxesquecíveis.
         </p>
+    </div>
+</div>
+
+<div class="order">
+    <div class="container d-flex justify-content-center">
+        <h5 class="me-4">
+            Um doce pode mudar seu dia!<br>
+            Peça agora e experimente essas delícias.
+        </h5>
+        <button routerLink="/order" class="btn btn-primary">Faça seu pedido!</button>
     </div>
 </div>
 

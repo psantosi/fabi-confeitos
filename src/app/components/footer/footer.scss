@@ -4,6 +4,21 @@ footer {
   padding: 20px 0;
   flex-grow: 0;
   flex-shrink: 0;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 767px) {
+    .wapper-footer {
+      text-align: center;
+      flex-direction: column;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+  }
   
   a {
     color: #fcf6df;

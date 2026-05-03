@@ -3,12 +3,13 @@ import { Home } from './pages/home/home';
 import { Enterprise } from './pages/enterprise/enterprise';
 import { Products } from './pages/products/products';
 import { Order } from './pages/order/order';
+import { Gallery } from './pages/gallery/gallery';
 
 export const routes: Routes = [
     {
         path: 'home',
         component: Home,
-        title: 'Inicio'
+        title: 'Inicio',
     },
     {
         path: 'entreprise',
@@ -19,6 +20,11 @@ export const routes: Routes = [
         path: 'products/:tab',
         component: Products,
         title: 'Produtos'
+    },
+    {
+        path: 'gallery',
+        component: Gallery,
+        title: 'Galeria'
     },
     {
         path: 'order',

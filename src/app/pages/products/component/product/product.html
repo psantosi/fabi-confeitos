@@ -12,7 +12,7 @@
             {{ description() }}
         </p>
 
-        <p class="card-text fw-bold">{{ price() }}</p>        
+        <p class="card-text fw-bold">{{ price() | currency:'BRL' }} {{ unit() }}</p>        
       </div>
     </div>
   </div>

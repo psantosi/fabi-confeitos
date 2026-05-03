@@ -1,0 +1,26 @@
+.card {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  .card-body {
+    padding: 0;
+    border: 8px solid #fff;
+    box-shadow: 0px 8px 8px;
+
+    img {
+      min-height: 100%;
+    }
+  }
+}
+
+.modal-content {
+  color: #60361f;
+  background-color: #fcf6df;
+
+  .btn-close {
+    position: absolute;
+    right: 20px;
+    background-color: #fff;
+  }
+}

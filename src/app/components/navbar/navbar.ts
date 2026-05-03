@@ -25,6 +25,8 @@ export class Navbar {
         return 'Empresa';
       case 'products':
         return 'Produtos';
+      case 'gallery':
+        return 'Galeria';
       case 'order':
         return 'Pedido';
       default:

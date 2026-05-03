@@ -3,3 +3,21 @@
         height: 38px;
     }
 }
+
+.table {
+    width: 100%;
+    overflow: auto;
+    
+    @media (max-width: 576px) {
+        display: block;
+    }
+}
+
+.table > :not(caption) > * > * {
+    color: #60361f !important;
+    border-color: #f8bcc7;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+    background-color: #f8bcc73d;
+}
